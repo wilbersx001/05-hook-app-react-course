@@ -7,28 +7,30 @@ export const TodoAdd = ({onNewTodo}) => {
         description: ''
     });
 
-    const onFormSubmit = (event) => {
+    const onFormSubmit = ( event ) => {
         event.preventDefault();
-        if(description.length <= 1) return;
-        
+        if ( description.length <= 1 ) return;
+
         const newTodo = {
             id: new Date().getTime(),
             done: false,
             description: description,
         }
-         onNewTodo(newTodo);
-         onResetForm();
+
+        onNewTodo(newTodo);
+        onResetForm();
     }
+
 
   return (
     <form onSubmit={onFormSubmit}>
                     <input
-                        type="text"
-                        placeholder="Que hay que hacer?"
+                        type="text" 
+                        placeholder="¿Qué hay que hacer?"
                         className="form-control"
                         name="description"
-                        value={description}
-                        onChange={OnInputChange}
+                        value={ description }
+                        onChange={ OnInputChange }
                     >
                         
                     </input>
